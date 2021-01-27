@@ -51,7 +51,7 @@ public class Solution {
                       if(c == '+' &&(i == 0|| s.charAt(i-1) =='(')){
                           continue;
                       }
-                      //当前运算符低于/等于栈内运算符优先级时
+                      //当前运算符低于/等于栈内运算符优先级时;要判断栈不为空！！否则报错
                       while(!opt.isEmpty()&&(opt.peek()=='*'||opt.peek()=='+'||opt.peek()=='-')){
                           int a = num.pop();
                           int b = num.pop();
