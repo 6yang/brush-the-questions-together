@@ -12,7 +12,7 @@
 
 
 
-## NC112
+## NC112  给定一个十进制数M，以及需要转换的进制数N
 
 ```java
 public String solve(int M, int N) {
@@ -42,7 +42,7 @@ public String solve(int M, int N) {
     }
 ```
 
-## NC137
+## NC137 请写一个整数计算器
 
 ```java
 public int solve(String s) {
@@ -93,7 +93,7 @@ public int solve(String s) {
     }
 ```
 
-## NC12
+## NC12 重建二叉树
 
 ```java
 HashMap<Integer, Integer> map = new HashMap<>();
@@ -111,6 +111,23 @@ HashMap<Integer, Integer> map = new HashMap<>();
         root.left = build(preOrder,preL+1,preL+inLeftSize,inOrder,inL,inCenter-1);
         root.right = build(preOrder,preL+inLeftSize+1,preR,inOrder,inCenter+1,inR);
         return root;
+    }
+```
+
+## NC7 一次买卖股票最大利润
+
+```java
+public int maxProfit (int[] prices) {
+        // write code here
+        if(prices == null || prices.length<2){
+            return 0;
+        }
+        int profit = 0 , minPrice = Integer.MAX_VALUE;
+        for (int price : prices) {
+            minPrice = Math.min(price,minPrice);
+            profit = Math.max(profit,price-minPrice);
+        }
+        return profit;
     }
 ```
 
