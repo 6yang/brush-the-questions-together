@@ -1,0 +1,47 @@
+class Solution {
+    public boolean isPail(ListNode head) {
+        if(head == null) return true;
+        //前半部分尾部节点
+        ListNode firHalfTail = findFirHalfTail(head);
+        //反转后半部分链表，返回头结点
+        ListNode secHalfHead = reverseHalf(firHalfTail.next);
+
+        ListNode p1 = head;
+        ListNode p2 = secHalfHead;
+        //注意这个跳出条件：p1最终会走到
+        while(p2!=null){
+            if(p1.val != p2.val){
+                //记得还原链表
+                firHalfTail.next = reverseHalf(secHalfHead);
+                return false;
+            }
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        //记得还原链表
+        firHalfTail.next = reverseHalf(secHalfHead);
+        return true;
+    }
+    //找到的是中间结点所在位置，若为1221，则找到第一个中间结点。
+    public ListNode findFirHalfTail(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast.next!=null && fast.next.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    public ListNode reverseHalf(ListNode head){
+        ListNode prev = null;
+        ListNode curr = head;
+        while(curr != null){
+            ListNode tmp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = tmp;
+        }
+        return prev;
+    }
+
+}

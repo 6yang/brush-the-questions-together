@@ -1,0 +1,27 @@
+public class Solution {
+    /**
+     * 进制转换
+     * @param M int整型 给定整数
+     * @param N int整型 转换到的进制
+     * @return string字符串
+     */
+    public String solve (int M, int N) {
+        // write code here
+        if(M == 0) return "0";
+        String s = "0123456789ABCDEF";//2 16进制转换使用
+        String res = "";
+        boolean tmp = true;//判断正负标志
+        if( M < 0){
+            M = -M;
+            tmp = false;
+        }
+        while(M != 0){
+            res += s.charAt(M%N);
+            M /= N;
+        }
+        if(!tmp) res += "-"; //追加负号
+        //使用StringBuffer的方法倒叙处理res
+        StringBuffer sb = new StringBuffer(res);
+        return sb.reverse().toString();
+    }
+}

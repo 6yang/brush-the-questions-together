@@ -1,0 +1,93 @@
+该题意是+、-、*、()的整数计算器
+
+运算符优先级，从高到低 *、+ -
+有括号先算括号内的，后算括号外的，多层括号由内向外进行
+一个操作数栈opnd，一个操作符栈optr
+
+import java.util.*;
+
+public class Solution {
+  /**
+       * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+       * 返回表达式的值
+       * @param s string字符串 待计算的表达式
+       * @return int整型
+       */
+
+      public int solve (String s) {
+          // write code here
+          Stack<Integer> num = new Stack<>();
+          Stack<Character> opt = new Stack<>();
+          s += '#';//补结束符
+
+          for(int i = 0; i < s.length() ;i ++){
+              System.out.println("stack num+"+i+":"+num.toString());
+              System.out.println("stack opt+"+i+":"+opt.toString());
+              char c = s.charAt(i);
+              int d = c - '0';
+              if(c== '#'){//遇到结束符，退出。
+                  num.push(switchOpt(num.pop(),num.pop(),opt.pop()));
+                  break;
+              }
+              //操作数栈，第一个直接入栈，若不是第一个字符，判断前一字符是否为数字
+              if(d >=0 && d <= 9){
+                  if(i == 0){
+                      num.push(d);
+                  }else{
+                      int e = s.charAt(i-1)-'0';
+                      if(e >=0 && e<= 9){
+                          int sum = num.pop()*10+d;
+                          num.push(sum);
+                      }else{
+                          num.push(d);
+                      }
+                  }
+              }else{//运算符栈：考虑负数，无用的加号，
+                  if(c=='+'||c=='-'){
+                      if(c == '-'&&(i == 0||s.charAt(i-1) == '(')){
+                          num.push(0);
+                          opt.push('-');
+                      }
+                      if(c == '+' &&(i == 0|| s.charAt(i-1) =='(')){
+                          continue;
+                      }
+                      //当前运算符低于/等于栈内运算符优先级时;要判断栈不为空！！否则报错
+                      while(!opt.isEmpty()&&(opt.peek()=='*'||opt.peek()=='+'||opt.peek()=='-')){
+                          int a = num.pop();
+                          int b = num.pop();
+                          char op = opt.pop();
+                          num.push(switchOpt(a,b,op));
+                      }
+                      opt.push(c);//运算符入栈
+                  }
+
+                  if(c=='('){
+                      opt.push(c);
+                  }
+                  if(c == ')'){
+                      while(opt.peek()!='('){
+                          int a = num.pop();
+                          int b = num.pop();
+                          char op = opt.pop();
+                          num.push(switchOpt(a,b,op));
+                      }
+                      opt.pop();//括号内计算处理完毕，左括号出栈
+                  }
+                  if(c == '*'){//*优先级最高，不需要处理前序计算，直接入栈
+                      opt.push(c);
+                  }
+              }
+
+          }
+          return num.peek();
+      }
+      public int switchOpt(int a,int b, char c){
+          switch(c){
+              case '*': return(a*b);
+              case '+': return(a+b);
+              case '-': return(b-a);
+          }
+          return 0;
+      }
+}
+
