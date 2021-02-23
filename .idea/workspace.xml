@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4ffb763-7ea3-4ab2-9813-0779edde7b94" name="Default Changelist" comment="">
+    <list default="true" id="e4ffb763-7ea3-4ab2-9813-0779edde7b94" name="Default Changelist" comment="2.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/2021-2月/2021-02-1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/2021-2月/2021-02-1/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/2021-2月/2021-02-2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/2021-2月/2021-02-2/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +31,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="zyang" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -62,36 +62,40 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d8228a6d-ef47-49df-9e15-a69cc359c41d" name="Default Changelist" comment="" />
+      <changelist id="e4ffb763-7ea3-4ab2-9813-0779edde7b94" name="Default Changelist" comment="2.1" />
       <created>1611631698990</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611631698990</updated>
       <workItem from="1611631700468" duration="240000" />
       <workItem from="1611714899139" duration="89000" />
+      <workItem from="1612443259302" duration="2859000" />
     </task>
+    <task id="LOCAL-00001" summary="2.1">
+      <created>1612360090473</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1612360090473</updated>
+    </task>
+    <task id="LOCAL-00002" summary="2.1">
+      <created>1612360189214</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612360189214</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -104,5 +108,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.1" />
   </component>
 </project>
